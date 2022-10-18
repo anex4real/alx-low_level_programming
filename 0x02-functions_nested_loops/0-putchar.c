@@ -1,4 +1,4 @@
-#include "main.h"
+#include "HANNEX.h"
 /**
  * main - Entry point
  *
@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *sh = "main";
+	char *sh = "hannex";
 
 	while (*sh)
 	{
