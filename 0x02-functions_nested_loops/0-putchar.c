@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *sh = "hannex";
+	char *sh = "0";
 
 	while (*sh)
 	{
