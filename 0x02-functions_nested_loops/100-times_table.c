@@ -1,52 +1,50 @@
-#include "main.h"
-/**
- * print_times_table - Entry point
- * @n: input
- * Return: Always 0 (Success)
- */
+#include "holberton.h"
 
+/**
+ * print_times_table - Print the n times table, starting from 0
+ * @n: The times table to print
+ *
+ * Return: Nothing
+ */
 void print_times_table(int n)
 {
-	int a, b, c, d, e, f;
+	int x, y, mult, one, ten, hund;
 
-	if (n >= 0 && n < 15)
+	x = 0;
+	if (n >= 0 && n <= 15)
 	{
-		for (a = 0; a <=  n; a++)
+		while (x <= n)
 		{
-			for (b = 0; b <= n; b++)
+			y = 0;
+			while (y <= n)
 			{
-				c = a * b; d = c / 100; e = (c /  10) % 10;
-				f = (c % 100) % 10;
-				if (b == 0)
-				{
-					_putchar('0');
-				}
-				else if (c < 10)
-				{
-					_putchar(' '); 
-					_putchar(' ');
-					_putchar('0' + f);
-				}
-				else if (c < 100)
+				mult = x * y;
+				one = mult % 10;
+				ten = mult % 100 / 10;
+				hund = mult / 100;
+				if (hund == 0 && y != 0)
 				{
 					_putchar(' ');
-					_putchar('0' + e); 
-					_putchar('0' + f);
+					if (ten == 0)
+						_putchar(' ');
+					else
+						_putchar(ten + '0');
 				}
-				else
+				else if (hund != 0)
 				{
-					_putchar('0' + d);
-					_putchar('0' + e);
-					_putchar('0' + f);
+					_putchar(hund + '0');
+					_putchar(ten + '0');
 				}
-				if (b < n)
+				_putchar(one + '0');
+				if (y != n)
 				{
-					_putchar(','); 
+					_putchar(',');
 					_putchar(' ');
 				}
-				else
-					_putchar('\n');
+				y++;
 			}
+			_putchar('\n');
+			x++;
 		}
 	}
 }
